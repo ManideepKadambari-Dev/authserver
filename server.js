@@ -1,6 +1,5 @@
 const express = require('express')
-const AuthRouter = require("./Controllers/Auth_Controller");
-const ServiceRouter = require("./Controllers/Service_Controller");
+const AuthRouter = require("./Controllers/Netflix_Auth_Controller");
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 
@@ -15,5 +14,4 @@ app.listen(PORT,()=>{
     mongoose.connect(process.env.MongoDB_URI,{useNewUrlParser: true},()=>{console.log("connected to MongoDB")})
 })
 
-app.use("/auth",AuthRouter);
-app.use("/serv",ServiceRouter);
+app.use("/netflix/auth",AuthRouter);
