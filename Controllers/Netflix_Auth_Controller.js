@@ -1,4 +1,4 @@
-const express = require("express");SignUp
+const express = require("express");
 const jwt = require("jsonwebtoken");
 const User = require("../Models/NetflixUserModel");
 const bcrypt = require("bcrypt");
