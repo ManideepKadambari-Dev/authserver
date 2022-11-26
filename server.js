@@ -1,4 +1,5 @@
 const express = require('express')
+const helmet = require('helmet')
 const AuthRouter = require("./Controllers/Netflix_Auth_Controller");
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
@@ -6,6 +7,7 @@ const cors = require('cors')
 const cookieparser = require("cookie-parser");
 
 dotenv.config();
+app.use(helmet())
 const app = express();
 app.use(express.json());
 const PORT = process.env.port || 9000;
