@@ -13,7 +13,7 @@ app.use(express.json());
 const PORT = process.env.port || 9000;
 app.use(cookieparser())
 app.use(cors({
-    origin: "https://netflix-clone-web-one.vercel.app/",
+    origin: "https://netflix-clone-web-one.vercel.app",
     credentials: true,
 }));
 
