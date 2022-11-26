@@ -7,8 +7,8 @@ const cors = require('cors')
 const cookieparser = require("cookie-parser");
 
 dotenv.config();
-app.use(helmet())
 const app = express();
+app.use(helmet())
 app.use(express.json());
 const PORT = process.env.port || 9000;
 app.use(cookieparser())
