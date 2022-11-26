@@ -93,10 +93,9 @@ const logincontroller = async (req, res) => {
         process.env.TOKEN_SECRET,
         { expiresIn: "1d" }
       );
-      res.cookie("refreshtoken", r_token, {
+      await res.cookie("refreshtoken", r_token, {
         httpOnly: true,
         max_Age: 24 * 60 * 60 * 1000 * 5,
-        
       });
       res.status(200).send({
         auth_token: a_token,
