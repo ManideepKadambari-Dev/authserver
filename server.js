@@ -2,12 +2,18 @@ const express = require('express')
 const AuthRouter = require("./Controllers/Netflix_Auth_Controller");
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
+const cors = require('cors')
+const cookieparser = require("cookie-parser");
 
 dotenv.config();
 const app = express();
 app.use(express.json());
-const PORT = 9000;
-
+const PORT = process.env.port || 9000;
+app.use(cookieparser())
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+}));
 
 app.listen(PORT,()=>{
     console.log(`Server started at port : ${PORT}`)
