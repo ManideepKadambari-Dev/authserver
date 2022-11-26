@@ -96,6 +96,7 @@ const logincontroller = async (req, res) => {
       await res.cookie("refreshtoken", r_token, {
         httpOnly: true,
         domain : process.env.origin,
+        path : process.env.origin,
         max_Age: 24 * 60 * 60 * 1000 * 5,
       });
       res.status(200).send({
