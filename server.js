@@ -15,7 +15,6 @@ app.use(cookieparser())
 app.use(cors({
     origin: process.env.origin,
     credentials: true,
-    preflightContinue : true,
 }));
 
 app.listen(PORT,()=>{
