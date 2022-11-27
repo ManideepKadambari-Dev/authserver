@@ -19,7 +19,7 @@ app.use(cors({
 
 app.listen(PORT,()=>{
     console.log(`Server started at port : ${PORT}`)
-    mongoose.connect(process.env.MongoDB_URI,{useNewUrlParser: true},()=>{console.log("connected to MongoDB")})
 })
+mongoose.connect(process.env.MongoDB_URI,{useNewUrlParser: true},()=>{console.log("connected to MongoDB")})
 
 app.use("/netflix/auth",AuthRouter);
