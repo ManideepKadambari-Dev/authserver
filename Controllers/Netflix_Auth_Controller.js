@@ -102,7 +102,7 @@ const logincontroller = async (req, res) => {
           { expiresIn: "1d" }
         );
         await res.cookie("refreshtoken", r_token, {
-          httpOnly: false,
+          httpOnly: true,
           domain: "manideepdev.tk",
           max_Age: 24 * 60 * 60 * 1000 * 5,
         });
